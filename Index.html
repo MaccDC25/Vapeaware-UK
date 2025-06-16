@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VapeAware UK</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #222;
+      margin: 0;
+    }
+    header, footer {
+      background-color: #002f5f;
+      color: white;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      margin-right: 1rem;
+      text-decoration: none;
+    }
+    main {
+      padding: 2rem;
+    }
+    .hero {
+      background-color: #d62828;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    .section {
+      margin-top: 3rem;
+    }
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 2rem 0;
+    }
+    .stat {
+      background: white;
+      padding: 1rem;
+      margin: 1rem;
+      flex: 1 1 30%;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    form {
+      background: white;
+      padding: 1.5rem;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: bold;
+    }
+    input[type="radio"], input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+    .button {
+      background-color: #002f5f;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      margin-top: 1.5rem;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #e0f7e9;
+      border-left: 5px solid #007b43;
+    }
+    .links a {
+      display: block;
+      margin: 0.5rem 0;
+      color: #002f5f;
+    }
+    .blog {
+      background: white;
+      padding: 1rem;
+      margin: 1rem 0;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>VapeAware UK</h1>
+  <nav aria-label="Main navigation">
+    <a href="#dangers">Dangers</a>
+    <a href="#stats">Stats</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#youth">Youth</a>
+    <a href="#resources">Resources</a>
+    <a href="#blogs">News</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Vaping Isn't Harmless</h2>
+    <p>Understand the risks. Take control of your health.</p>
+  </section>
+
+  <section id="dangers" class="section">
+    <h2>Dangers of Vaping</h2>
+    <p>Vaping exposes users to harmful chemicals like formaldehyde, acetaldehyde and nicotine. Long-term use is linked to respiratory disease, addiction, and cardiovascular problems. Young people are especially at risk.</p>
+  </section>
+
+  <section id="stats" class="section">
+    <h2>Key UK Stats</h2>
+    <div class="stats">
+      <div class="stat"><strong>15%</strong><br> of 15-year-olds vape regularly</div>
+      <div class="stat"><strong>1 in 4</strong><br> vape users never smoked before</div>
+      <div class="stat"><strong>95%</strong><br> of vapes contain addictive nicotine</div>
+    </div>
+  </section>
+
+  <section id="quiz" class="section">
+    <h2>Vaping Questionnaire</h2>
+    <form id="vapeQuiz" onsubmit="return handleSubmit(event)">
+      <label>Do you currently vape?</label>
+      <input type="radio" name="q1" value="yes" required> Yes
+      <input type="radio" name="q1" value="no"> No
+
+      <label>How often do you vape?</label>
+      <input type="radio" name="q2" value="daily" required> Daily
+      <input type="radio" name="q2" value="weekly"> Weekly
+      <input type="radio" name="q2" value="rarely"> Rarely
+      <input type="radio" name="q2" value="never"> Never
+
+      <label>Have you tried quitting?</label>
+      <input type="radio" name="q3" value="yes" required> Yes
+      <input type="radio" name="q3" value="no"> No
+
+      <label>How ready are you to quit?</label>
+      <input type="radio" name="q4" value="very"> Very ready
+      <input type="radio" name="q4" value="somewhat"> Somewhat ready
+      <input type="radio" name="q4" value="not"> Not ready
+
+      <label>What would help you quit?</label>
+      <input type="checkbox" name="q5" value="support"> GP support
+      <input type="checkbox" name="q5" value="apps"> Apps
+      <input type="checkbox" name="q5" value="friends"> Friends/family
+      <input type="checkbox" name="q5" value="none"> Not sure
+
+      <button type="submit" class="button">Submit</button>
+    </form>
+    <div id="quizResult" class="result" style="display:none;"></div>
+  </section>
+
+  <section id="youth" class="section">
+    <h2>Youth & Schools</h2>
+    <p>We're working with schools to educate young people about the risks of vaping. Resources include posters, lesson plans, and peer-led programmes. Contact your local authority to access materials.</p>
+  </section>
+
+  <section id="resources" class="section">
+    <h2>Helpful Links</h2>
+    <div class="links">
+      <a href="https://www.nhs.uk/better-health/quit-smoking/" target="_blank">NHS Quit Support</a>
+      <a href="https://ash.org.uk" target="_blank">ASH - Action on Smoking and Health</a>
+      <a href="https://www.gov.uk/government/news/government-to-close-loophole-on-child-vaping" target="_blank">Government News on Child Vaping</a>
+    </div>
+  </section>
+
+  <section id="blogs" class="section">
+    <h2>News & Blogs</h2>
+    <div class="blog">
+      <h3>New Legislation on Flavoured Vapes</h3>
+      <p>The UK government has announced plans to ban flavoured vapes that appeal to children. Here's what that means for retailers and families...</p>
+    </div>
+    <div class="blog">
+      <h3>My Journey to Quitting</h3>
+      <p>A 17-year-old shares their story of breaking free from nicotine addiction after 2 years of daily vaping...</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 VapeAware UK | Public Health England | Accessibility Compliant</p>
+</footer>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault();
+    const form = document.getElementById("vapeQuiz");
+    const resultBox = document.getElementById("quizResult");
+    const data = new FormData(form);
+    let score = 0;
+    const currentlyVapes = data.get("q1") === "yes";
+    const frequency = data.get("q2");
+    const triedQuit = data.get("q3") === "yes";
+    const readiness = data.get("q4");
+
+    if (!currentlyVapes) {
+      resultBox.innerHTML = `<strong>Great!</strong> You're not vaping. Help spread awareness to your peers.`;
+    } else {
+      if (frequency === "daily") score += 2;
+      else if (frequency === "weekly") score += 1;
+      if (triedQuit) score += 1;
+      if (readiness === "very") score += 2;
+      else if (readiness === "somewhat") score += 1;
+
+      if (score >= 4) {
+        resultBox.innerHTML = `<strong>You're ready to quit!</strong> Use <a href='https://www.nhs.uk/better-health/quit-smoking/' target='_blank'>NHS Quit Services</a> to get started.`;
+      } else if (score >= 2) {
+        resultBox.innerHTML = `<strong>You're thinking about quitting.</strong> Set a goal and find support.`;
+      } else {
+        resultBox.innerHTML = `<strong>Not ready yet?</strong> Keep learning and seek help when you're ready.`;
+      }
+    }
+    resultBox.style.display = "block";
+    resultBox.scrollIntoView({ behavior: "smooth" });
+    return false;
+  }
+</script>
+
+</body>
+</html>
