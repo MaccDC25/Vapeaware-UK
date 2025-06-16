@@ -7,14 +7,19 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
+      background-color: #f9f9f9;
       color: #222;
       margin: 0;
     }
     header, footer {
-      background-color: #002f5f;
+      background-color: #001f3f;
       color: white;
       padding: 1rem;
+      text-align: center;
+    }
+    header h1 {
+      font-weight: bold;
+      font-size: 2.5rem;
     }
     nav a {
       color: white;
@@ -22,27 +27,40 @@
       text-decoration: none;
     }
     main {
-      padding: 2rem;
+      padding: 1.5rem;
     }
     .hero {
-      background-color: #d62828;
-      color: white;
+      border: 1px solid darkred;
+      background-color: #fff0f0;
+      color: #222;
       text-align: center;
-      padding: 2rem;
+      padding: 1.5rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .hero h2 {
+      font-weight: bold;
     }
     .section {
-      margin-top: 3rem;
+      margin-top: 2rem;
+    }
+    .section h2 {
+      font-weight: bold;
+      color: #001f3f;
+    }
+    .section ul li {
+      margin-bottom: 0.6rem;
     }
     .stats {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
-      margin: 2rem 0;
+      margin: 1.5rem 0;
     }
     .stat {
       background: white;
       padding: 1rem;
-      margin: 1rem;
+      margin: 0.75rem;
       flex: 1 1 30%;
       box-shadow: 0 0 5px rgba(0,0,0,0.1);
       text-align: center;
@@ -63,7 +81,7 @@
       margin-right: 0.5rem;
     }
     .button {
-      background-color: #002f5f;
+      background-color: #001f3f;
       color: white;
       padding: 0.75rem 1.5rem;
       border: none;
@@ -79,13 +97,7 @@
     .links a {
       display: block;
       margin: 0.5rem 0;
-      color: #002f5f;
-    }
-    .blog {
-      background: white;
-      padding: 1rem;
-      margin: 1rem 0;
-      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+      color: #001f3f;
     }
   </style>
 </head>
@@ -97,30 +109,35 @@
     <a href="#dangers">Dangers</a>
     <a href="#stats">Stats</a>
     <a href="#quiz">Quiz</a>
-    <a href="#youth">Youth</a>
+    <a href="#youth">Schools</a>
     <a href="#resources">Resources</a>
-    <a href="#blogs">News</a>
   </nav>
 </header>
 
 <main>
   <section class="hero">
-    <h2>Vaping Isn't Harmless</h2>
+    <h2>Quit while you're ahead</h2>
     <p>Understand the risks. Take control of your health.</p>
   </section>
 
   <section id="dangers" class="section">
     <h2>Dangers of Vaping</h2>
-    <p>Vaping exposes users to harmful chemicals like formaldehyde, acetaldehyde and nicotine. Long-term use is linked to respiratory disease, addiction, and cardiovascular problems. Young people are especially at risk.</p>
+    <ul>
+      <li>Exposure to harmful chemicals like formaldehyde and acetaldehyde</li>
+      <li>Highly addictive due to nicotine content</li>
+      <li>Linked to long-term respiratory and cardiovascular disease</li>
+      <li>Potential gateway to cigarette smoking, especially in youth</li>
+      <li>Unregulated products may contain toxic or unknown substances</li>
+    </ul>
   </section>
 
   <section id="stats" class="section">
     <h2>Key UK Stats</h2>
-    <div class="stats">
-      <div class="stat"><strong>15%</strong><br> of 15-year-olds vape regularly</div>
-      <div class="stat"><strong>1 in 4</strong><br> vape users never smoked before</div>
-      <div class="stat"><strong>95%</strong><br> of vapes contain addictive nicotine</div>
-    </div>
+    <ul>
+      <li><strong>1 in 7 teens</strong> report daily vaping by age 15</li>
+      <li><strong>Over 25%</strong> of vapers never smoked before</li>
+      <li><strong>Almost all vapes</strong> sold in the UK contain nicotine</li>
+    </ul>
   </section>
 
   <section id="quiz" class="section">
@@ -136,14 +153,17 @@
       <input type="radio" name="q2" value="rarely"> Rarely
       <input type="radio" name="q2" value="never"> Never
 
+      <label>How many vapes do you use per week?</label>
+      <input type="number" name="q6" min="0" max="50" />
+
       <label>Have you tried quitting?</label>
       <input type="radio" name="q3" value="yes" required> Yes
       <input type="radio" name="q3" value="no"> No
 
       <label>How ready are you to quit?</label>
-      <input type="radio" name="q4" value="very"> Very ready
-      <input type="radio" name="q4" value="somewhat"> Somewhat ready
-      <input type="radio" name="q4" value="not"> Not ready
+      <input type="radio" name="q4" value="very"> Very ready - I'm prepared to take steps now<br>
+      <input type="radio" name="q4" value="somewhat"> Somewhat ready - I’ve been thinking about it<br>
+      <input type="radio" name="q4" value="not"> Not ready - I’m not sure yet
 
       <label>What would help you quit?</label>
       <input type="checkbox" name="q5" value="support"> GP support
@@ -157,8 +177,8 @@
   </section>
 
   <section id="youth" class="section">
-    <h2>Youth & Schools</h2>
-    <p>We're working with schools to educate young people about the risks of vaping. Resources include posters, lesson plans, and peer-led programmes. Contact your local authority to access materials.</p>
+    <h2>Information for Schools</h2>
+    <p>We partner with schools to deliver up-to-date education on vaping harms. We offer curriculum-aligned lesson plans, printable posters, peer-led intervention models and teacher CPD resources. Contact your local authority or email info@vapeaware.org.uk for more information.</p>
   </section>
 
   <section id="resources" class="section">
@@ -166,19 +186,8 @@
     <div class="links">
       <a href="https://www.nhs.uk/better-health/quit-smoking/" target="_blank">NHS Quit Support</a>
       <a href="https://ash.org.uk" target="_blank">ASH - Action on Smoking and Health</a>
-      <a href="https://www.gov.uk/government/news/government-to-close-loophole-on-child-vaping" target="_blank">Government News on Child Vaping</a>
-    </div>
-  </section>
-
-  <section id="blogs" class="section">
-    <h2>News & Blogs</h2>
-    <div class="blog">
-      <h3>New Legislation on Flavoured Vapes</h3>
-      <p>The UK government has announced plans to ban flavoured vapes that appeal to children. Here's what that means for retailers and families...</p>
-    </div>
-    <div class="blog">
-      <h3>My Journey to Quitting</h3>
-      <p>A 17-year-old shares their story of breaking free from nicotine addiction after 2 years of daily vaping...</p>
+      <a href="https://www.nhs.uk/live-well/quit-smoking/10-self-help-tips-to-stop-smoking/" target="_blank">10 Tips to Quit</a>
+      <a href="https://www.nhs.uk/smokefree/help-and-advice/local-support-services-helplines" target="_blank">Find Local Stop Smoking Services</a>
     </div>
   </section>
 </main>
@@ -209,11 +218,11 @@
       else if (readiness === "somewhat") score += 1;
 
       if (score >= 4) {
-        resultBox.innerHTML = `<strong>You're ready to quit!</strong> Use <a href='https://www.nhs.uk/better-health/quit-smoking/' target='_blank'>NHS Quit Services</a> to get started.`;
+        resultBox.innerHTML = `<strong>You're ready to quit!</strong> Start today using <a href='https://www.nhs.uk/better-health/quit-smoking/' target='_blank'>NHS Quit Services</a> and <a href='https://www.nhs.uk/smokefree/help-and-advice/local-support-services-helplines' target='_blank'>local support</a>.`;
       } else if (score >= 2) {
-        resultBox.innerHTML = `<strong>You're thinking about quitting.</strong> Set a goal and find support.`;
+        resultBox.innerHTML = `<strong>You're thinking about quitting.</strong> Reflect on why you vape and explore <a href='https://www.nhs.uk/live-well/quit-smoking/10-self-help-tips-to-stop-smoking/' target='_blank'>tips to prepare</a>.`;
       } else {
-        resultBox.innerHTML = `<strong>Not ready yet?</strong> Keep learning and seek help when you're ready.`;
+        resultBox.innerHTML = `<strong>Not ready yet?</strong> Keep learning and speak to a professional when you're ready.`;
       }
     }
     resultBox.style.display = "block";
